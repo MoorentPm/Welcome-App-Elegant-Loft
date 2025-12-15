@@ -1465,8 +1465,8 @@
                 // NUOVE CHIAVI PER PROPERTY MANAGEMENT
                 goodbye_pm_title: "Sei un Proprietario di Casa?",
                 goodbye_pm_p1: "Gestire un immobile può essere complesso. Offriamo un servizio di property management completo per massimizzare i tuoi guadagni e liberarti da ogni pensiero.",
-                goodbye_pm_p2: "Dalla gestione delle prenotazioni alla manutenzione, pensiamo a tutto noi."
-            
+                goodbye_pm_p2: "Dalla gestione delle prenotazioni alla manutenzione, pensiamo a tutto noi.",
+
                 // Chatbot - Operatore
                 chatbot_operator_msg: "Certamente. Per parlare direttamente con un operatore, clicca il pulsante qui sotto per avviare una chat su WhatsApp.",
                 chatbot_operator_btn: "Contatta Operatore",
@@ -1695,7 +1695,8 @@
                 // NUOVE CHIAVI PER PROPERTY MANAGEMENT
                 goodbye_pm_title: "Are You a Homeowner?",
                 goodbye_pm_p1: "Managing a property can be complex. We offer a complete property management service to maximize your earnings and free you from all worries.",
-                goodbye_pm_p2: "From booking management to maintenance, we take care of everything."
+                goodbye_pm_p2: "From booking management to maintenance, we take care of everything.",
+
                 // Chatbot - Operator
                 chatbot_operator_msg: "Of course. To speak directly with an operator, click the button below to start a WhatsApp chat.",
                 chatbot_operator_btn: "Contact Operator",
@@ -1827,10 +1828,8 @@
         }
 
         // --- Logica Navigazione Pagine & Lingua con History API ---
-        const pages = document.querySelectorAll('.page');
-        const backButton = document.getElementById('backButton');
-        const homePageId = 'home';
-        let currentLanguage = 'it';
+        // Dichiarazione variabili (inizializzate dopo il caricamento del DOM)
+        let pages, backButton, homePageId, currentLanguage;
 
         function debounce(func, wait) {
             let timeout;
@@ -2115,6 +2114,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             // --- Inizializzazione App Principale ---
             try {
+                // Inizializza variabili DOM
+                pages = document.querySelectorAll('.page');
+                backButton = document.getElementById('backButton');
+                homePageId = 'home';
+                currentLanguage = 'it';
+
                 // Calcola altezza header
                 const header = document.querySelector('.fixed-header');
                 if (header) {
